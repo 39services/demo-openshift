@@ -1,0 +1,7 @@
+namePrefix: "cv03-"
+bases:
+  - ../../base
+configMapGenerator:
+  - name: nginx-html
+    literals:
+      - 'index.html=<!DOCTYPE html><html><head><style>h1 { color: #ffbfca; }</style></head><body><h1>Hello from CV03</h1></body></html>'

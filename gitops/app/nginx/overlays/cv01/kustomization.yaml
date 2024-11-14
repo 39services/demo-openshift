@@ -1,0 +1,9 @@
+namePrefix: "cv01-"
+bases:
+  - ../../base
+patchesStrategicMerge:
+  - deployment-patch.yaml
+configMapGenerator:
+  - name: nginx-html
+    literals:
+      - 'index.html=<!DOCTYPE html><html><head><style>h1 { color: #39c4ba; }</style></head><body><h1>Hello from CV01</h1></body></html>'
