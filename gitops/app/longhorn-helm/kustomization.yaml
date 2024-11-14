@@ -1,2 +1,18 @@
-resources:
-  - longhorn-storageclass-custom.yaml
+namespace: longhorn-system
+
+helmCharts:
+  - name: longhorn
+    releaseName: longhorn
+    namespace: longhorn-system
+    repo: https://charts.longhorn.io/
+    version: "1.7.2"
+    valuesInline:
+
+      openshift:
+        enabled: true
+
+      image:
+        openshift:
+          oauthProxy:
+            repository: quay.io/openshift/origin-oauth-proxy
+            tag: 4.17

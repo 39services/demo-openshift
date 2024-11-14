@@ -1,4 +1,4 @@
 resources:
   - ./nginx
   - ./longhorn-helm
-  - ./longhorn-sc
+  - ./longhorn-storageclass
