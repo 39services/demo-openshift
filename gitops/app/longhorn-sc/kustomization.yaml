@@ -1,8 +1,5 @@
 namespace: longhorn-system
 
-resources:
-  - longhorn-storageclass-custom.yaml
-
 helmCharts:
   - name: longhorn
     releaseName: longhorn

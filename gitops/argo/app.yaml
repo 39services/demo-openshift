@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-deployments
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: gitops-deployments
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      recurse: true
+    path: 'gitops/app'
+    repoURL: 'https://github.com/39services/demo-openshift.git'
+    targetRevision: 'main'
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
